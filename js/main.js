@@ -20,13 +20,19 @@
 $('#btn').click(function() {
 
     var root = 'https://jsonplaceholder.typicode.com';
+    var search = document.getElementById('search').value;
 
 $.ajax({
-  url: root + '/posts/1',
+  url: root + '/photos/' + search,
   success: function(data) {
-        console.log(data.title)
+    
+            $('H1').html(data.title);
+            document.getElementById('img').src = data.thumbnailUrl;
+    
   },
+
   method: 'GET'
+    
 })
 
 // var root = 'https://jsonplaceholder.typicode.com';
