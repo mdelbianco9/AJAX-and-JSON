@@ -25,9 +25,12 @@ $('#btn').click(function() {
 $.ajax({
   url: root + '/photos/' + search,
   success: function(data) {
-    
-            $('H1').html(data.title);
-            document.getElementById('img').src = data.thumbnailUrl;
+    	
+    		var array = [];
+            // var title = array.push(data.title);
+            var string = data.title.toString().split("");
+            // var split = array.split("");
+            console.log(string)
     
   },
 
