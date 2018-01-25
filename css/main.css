@@ -30,7 +30,12 @@ div > div:nth-child(4) {
 }
 
 
-
+.letter {
+	display: inline-block;
+	border: 2px solid #ffe14a;
+	padding: 10px;
+	margin: 5px;
+}
 
 
 

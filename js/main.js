@@ -23,14 +23,22 @@ $('#btn').click(function() {
     var search = document.getElementById('search').value;
 
 $.ajax({
+  // Takes the value from the input and adds it to the index of the api path
   url: root + '/photos/' + search,
   success: function(data) {
-    	
-    		var array = [];
-            // var title = array.push(data.title);
+    	     
+            $('#box').empty();
             var string = data.title.toString().split("");
-            // var split = array.split("");
-            console.log(string)
+           	for (i = 0; i < string.length; i++) {
+              var box = document.getElementById('box');
+              var h1 = document.createElement('H1');
+              h1.className = "letter";
+              var text = document.createTextNode(string[i])
+              h1.appendChild(text);
+              box.appendChild(h1);
+           	}
+            
+            console.log(string);
     
   },
 
